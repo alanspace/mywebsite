@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Ping Pong</title>
+
+<style>
+  #playground{
+    background: #e0ffe0 url(images/pixel_grid.jpg);
+    width: 400px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+  }
+  #ball {
+    background: #fbb;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 150px;
+    top: 100px;
+    border-radius: 10px;
+  }
+  .paddle {
+    background: #bbf;
+    left: 50px;
+    top: 70px;
+    position: absolute;
+    width: 30px;
+    height: 70px;
+  }
+  #paddleB {
+    left: 320px;
+  }
+</style>
+
+</head>
+<body>
+  <header>
+    <h1 id="header"><span style="color:blue;">
+    Ping Pong: Please Choose Your Settings</span></h1>
+  </header>
+  
+  <div id="game">
+    <!-- The elements in here will disappear after the button
+         is clicked. -->
+    <form name="settings" onsubmit="return false">
+      Winning score: <input type="text" name="winningScore">
+      <br><br>
+      
+      Ball start speed: <input type="text" name="ballStartSpeed">
+      <br><br>
+      
+      Ball acceleration: <br>
+      <input type="radio" name="ballAcceleration" 
+      value="Zero" checked>Zero (Ball's speed doesn't change)
+      <br>
+      <input type="radio" name="ballAcceleration" 
+      value="Positive">Positive (Ball's speed increases)
+    </form>
+    <br>
+    <button type="button" onclick="startGame()">Begin</button>
+  </div>
+
+  <p id="messages"></p>
+
+  <script src="js/jquery-1.11.3.js"></script>
+  <script src="js/html5games.pingpong.js"></script>
+
+</body>
+</html>
